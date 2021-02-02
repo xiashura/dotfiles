@@ -1,0 +1,1 @@
+fusuma --config=./config.yml
