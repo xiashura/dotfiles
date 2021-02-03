@@ -33,6 +33,7 @@
         "<C-j>": false,
         "<C-h>": false,
         "<C-b>": false,
+        "<C-m>": false,
         "<C-w>": false,
         "<C-o>": false,
         "<C-t>": false
