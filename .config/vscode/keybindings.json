@@ -1,4 +1,4 @@
-// Place your key bindings in this file to override the defaultsauto[]
+//Place your key bindings in this file to override the defaultsauto[]
 [
   {
     "key": "ctrl+shift+=",
@@ -216,5 +216,15 @@
   {
     "key": "ctrl+shift+m",
     "command": "workbench.view.extension.bookmarks"
+  },
+  {
+    "key": "ctrl+shift+g",
+    "command": "workbench.view.scm",
+    "when": "!gitlens:disabled && config.gitlens.keymap == 'chorded'"
+  },
+  {
+    "key": "ctrl+shift+g g",
+    "command": "-workbench.view.scm",
+    "when": "!gitlens:disabled && config.gitlens.keymap == 'chorded'"
   }
 ]
