@@ -184,11 +184,12 @@
   {
     "key": "alt+j",
     "command": "workbench.action.terminal.focusNext",
-    "when": "terminalFocus"
+    "when": "terminalFocus && terminalProcessSupported"
   },
   {
     "key": "alt+k",
-    "command": "workbench.action.terminal.focusPrevious"
+    "command": "workbench.action.terminal.focusPrevious",
+    "when": "terminalFocus && terminalProcessSupported"
   },
   {
     "key": "alt+n",
@@ -226,5 +227,14 @@
     "key": "ctrl+shift+g g",
     "command": "-workbench.view.scm",
     "when": "!gitlens:disabled && config.gitlens.keymap == 'chorded'"
+  },
+  {
+    "key": "ctrl+shift+n",
+    "command": "-workbench.action.newWindow"
+  },
+  {
+    "key": "ctrl+shift+c",
+    "command": "workbench.view.extension.dockerView",
+    "when": "editorTextFocus"
   }
 ]

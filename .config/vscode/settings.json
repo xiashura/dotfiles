@@ -1,5 +1,4 @@
 {
-    "window.zoomLevel": 0,
     "editor.minimap.enabled": false,
     "breadcrumbs.enabled": true,
     "editor.tabSize": 2,
@@ -109,7 +108,6 @@
             ]
         }
     ],
-    "workbench.colorTheme": "GitHub Dark",
     "workbench.colorCustomizations": {
         "statusBar.background": "#8FBCBB",
         "statusBar.noFolderBackground": "#8FBCBB",
@@ -121,5 +119,8 @@
     "editor.multiCursorModifier": "ctrlCmd",
     "git.autofetch": true,
     "explorer.confirmDelete": false,
-    "workbench.activityBar.visible": true,
+    "window.zoomLevel": 1,
+    "workbench.colorTheme": "GitHub Dark",
+    "workbench.activityBar.visible": false,
+    
 }

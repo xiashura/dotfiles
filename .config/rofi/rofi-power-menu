@@ -13,7 +13,7 @@ set -e
 set -u
 
 # All supported choices
-all=(shutdown reboot suspend hibernate logout lockscreen)
+all=(shutdown reboot suspend logout lockscreen)
 
 # By default, show all (i.e., just copy the array)
 show=("${all[@]}")
@@ -23,7 +23,7 @@ texts[lockscreen]="lock screen"
 texts[switchuser]="switch user"
 texts[logout]="log out"
 texts[suspend]="suspend"
-texts[hibernate]="hibernate"
+#texts[hibernate]="hibernate"
 texts[reboot]="reboot"
 texts[shutdown]="shut down"
 
@@ -32,22 +32,25 @@ icons[lockscreen]="\uf023"
 icons[switchuser]="\uf518"
 icons[logout]="\uf842"
 icons[suspend]="\uf9b1"
-icons[hibernate]="\uf7c9"
+#icons[hibernate]="\uf7c9"
 icons[reboot]="\ufc07"
 icons[shutdown]="\uf011"
 icons[cancel]="\u00d7"
 
 declare -A actions
-actions[lockscreen]="loginctl lock-session $XDG_SESSION_ID"
+#i3wm
+#actions[lockscreen]="loginctl lock-session $XDG_SESSION_ID"
+#sway
+actions[lockscreen]="swaylock -i  $(cat ~/.cache/wal/wal)"
 #actions[switchuser]="???"
 actions[logout]="loginctl terminate-session $XDG_SESSION_ID"
 actions[suspend]="systemctl suspend"
-actions[hibernate]="systemctl hibernate"
+#actions[hibernate]="systemctl hibernate"
 actions[reboot]="systemctl reboot"
 actions[shutdown]="systemctl poweroff"
 
 # By default, ask for confirmation for actions that are irreversible
-confirmations=(reboot shutdown logout hibernate)
+confirmations=(reboot shutdown logout)
 
 # By default, no dry run
 dryrun=false
