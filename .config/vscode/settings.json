@@ -1,8 +1,5 @@
 {
-    "editor.minimap.enabled": false,
-    "breadcrumbs.enabled": true,
     "editor.tabSize": 2,
-    "window.menuBarVisibility": "toggle",
     "go.useLanguageServer": true,
     "go.autocompleteUnimportedPackages": true,
     "go.toolsEnvVars": {
@@ -15,12 +12,29 @@
     "go.lintFlags": [
         "--fast"
     ],
+    "search.quickOpen.includeHistory": false,
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "variable.other.rust",
+                "settings": {
+                    "foreground": "#c651e5"
+                }
+            }
+        ]
+    },
+    "[rust]": {
+        "editor.defaultFormatter": "matklad.rust-analyzer"
+    },
+    "editor.snippetSuggestions": "top",
     "cSpell.language": "en,ru",
     "editor.lineNumbers": "relative",
-    "editor.fontFamily": "Fira Code",
+    "editor.fontFamily": "FiraCode Nerd Font",
+    "terminal.integrated.fontFamily": "FiraCode Nerd Font",
     "editor.fontLigatures": true,
     "editor.fontSize": 16,
     "vim.easymotion": true,
+    "vim.foldfix": true,
     "vim.incsearch": true,
     "vim.useSystemClipboard": true,
     "vim.useCtrlKeys": true,
@@ -119,8 +133,31 @@
     "editor.multiCursorModifier": "ctrlCmd",
     "git.autofetch": true,
     "explorer.confirmDelete": false,
-    "window.zoomLevel": 1,
+    "rust-analyzer.inlayHints.typeHints": true,
     "workbench.colorTheme": "GitHub Dark",
-    "workbench.activityBar.visible": false,
-    
+    "editor.renderControlCharacters": true,
+    "window.menuBarVisibility": "hidden",
+    "breadcrumbs.enabled": false,
+    "editor.minimap.enabled": false,
+    "emmet.includeLanguages": {
+        "html-eex": "html"
+    },
+    "cSpell.userWords": [
+        "actix",
+        "xiashura"
+    ],
+    "go.toolsManagement.autoUpdate": true,
+    "workbench.preferredLightColorTheme": "GitHub Light",
+    "workbench.preferredDarkColorTheme": "GitHub Dark",
+    "sundial.sunrise": "06:00",
+    "sundial.sunset": "17:00",
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter.notebook.ipynb",
+            "filenamePattern": "*.ipynb"
+        }
+    ],
+    "editor.formatOnSave": true,
+    "terminal.integrated.cursorStyle": "line",
+    "window.zoomLevel": 1,
 }

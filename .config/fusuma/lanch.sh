@@ -1,1 +1,1 @@
-fusuma --config=./config.yml
+fusuma --config=$HOME/.config/fusuma/config.yml
