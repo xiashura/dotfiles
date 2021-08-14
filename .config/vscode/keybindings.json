@@ -284,5 +284,10 @@
   {
     "key": "ctrl+n",
     "command": "-workbench.action.files.newUntitledFile"
+  },
+  {
+    "key": "ctrl+shift+c",
+    "command": "-workbench.action.terminal.openNativeConsole",
+    "when": "!terminalFocus"
   }
 ]

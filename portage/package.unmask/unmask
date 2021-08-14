@@ -1,0 +1,4 @@
+>=x11-base/xwayland-21.1.1-r2
+>sys-kernel/gentoo-sources-5.10
+>sys-kernel/linux-headers-5.10
+>net-im/zoom-5.4.53391.1108-r3

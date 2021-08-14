@@ -1,0 +1,40 @@
+media-video/obs-studio v4l
+sys-libs/glibc crypt
+# required by app-emulation/libvirt-7.4.0::gentoo[virt-network]
+# required by app-emulation/libvirt-glib-4.0.0::gentoo
+# required by app-emulation/virt-manager-3.2.0::gentoo
+# required by app-emulation/virt-manager (argument)
+>=net-dns/dnsmasq-2.85 script
+app-emulation/virt-manager  gtk 
+app-emulation/qemu spice
+sys-cluster/minikube libvirt
+# required by media-libs/mesa-21.1.4::gentoo[-video_cards_r300,-video_cards_radeon,-video_cards_r600,-video_cards_r100,video_cards_radeonsi,-video_cards_r200]
+# required by media-sound/spotify-1.1.56::gentoo
+# required by @selected
+# required by @world (argument)
+>=x11-libs/libdrm-2.4.107 video_cards_radeon
+# required by x11-libs/pango-1.48.7::gentoo
+# required by x11-libs/vte-0.64.2::gentoo
+# required by app-emulation/virt-manager-3.2.0::gentoo[gtk]
+# required by @selected
+# required by @world (argument)
+media-video/mpv -dvd
+# required by x11-libs/pango-1.48.7-r1::gentoo
+# required by www-client/firefox-bin-90.0.2::gentoo
+# required by @selected
+# required by @world (argument)
+# required by app-misc/neofetch-7.1.0::gentoo[X]
+# required by @selected
+# required by @world (argument)
+>=www-client/w3m-0.5.3_p20210102 imlib
+
+
+
+kde-plasma/ksysguard lm-sensors
+sys-process/htop lm-sensors
+# required by kde-plasma/kwin-5.21.5-r1::gentoo
+# required by kde-plasma/plasma-desktop-5.21.5-r1::gentoo
+# required by kde-plasma/plasma-meta-5.21.5::gentoo
+# required by @selected
+# required by @world (argument)
+>=x11-base/xorg-server-1.20.11 wayland

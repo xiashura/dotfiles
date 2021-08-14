@@ -1,0 +1,15 @@
+app-portage/layman sync-plugin-portage git
+# required by gnome-base/gnome-keyring-40.0::gentoo
+# required by app-crypt/libsecret-0.20.4::gentoo
+# required by app-editors/vscode-bin-1.57.0::dev1990-overlay
+# required by app-editors/vscode-bin (argument)
+>=app-crypt/gcr-3.40.0 gtk
+# required by net-im/telegram-desktop-2.7.4-r1::gentoo
+# required by net-im/telegram-desktop (argument)
+>=media-video/ffmpeg-4.4 opus
+>=app-editors/vscode-1.57.0  pf4public
+# required by x11-libs/xapps-2.2.1::gentoo
+# required by app-backup/timeshift-20.11.1::guru
+# required by timeshift (argument)
+>=dev-libs/libdbusmenu-16.04.0-r1 gtk3
+

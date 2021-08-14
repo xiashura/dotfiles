@@ -1,0 +1,8 @@
+sys-kernel/linux-headers ~amd64
+sys-kernel/gentoo-sources  ~amd64
+sys-devel/gcc ~amd64
+net-im/zoom ~amd64
+dev-util/gitlab-runner ~amd64
+sys-cluster/minikube ~amd64
+app-editors/vscode-bin::bombo82 ~amd64
+app-editors/vscode::dev1990-overlay ~amd64

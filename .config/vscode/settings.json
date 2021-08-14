@@ -29,8 +29,9 @@
     "editor.snippetSuggestions": "top",
     "cSpell.language": "en,ru",
     "editor.lineNumbers": "relative",
-    "editor.fontFamily": "FiraCode Nerd Font",
-    "terminal.integrated.fontFamily": "FiraCode Nerd Font",
+    "workbench.editor.untitled.experimentalLanguageDetection": true,
+    "editor.fontFamily": "FiraCode Nerd Font Mono",
+    "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
     "editor.fontLigatures": true,
     "editor.fontSize": 16,
     "vim.easymotion": true,
@@ -123,9 +124,9 @@
         }
     ],
     "workbench.colorCustomizations": {
-        "statusBar.background": "#8FBCBB",
-        "statusBar.noFolderBackground": "#8FBCBB",
-        "statusBar.debuggingBackground": "#8FBCBB",
+        "statusBar.background": "#B48EAD",
+        "statusBar.noFolderBackground": "#B48EAD",
+        "statusBar.debuggingBackground": "#B48EAD",
         "statusBar.foreground": "#434C5E"
     },
     "workbench.iconTheme": "material-icon-theme",
@@ -134,7 +135,7 @@
     "git.autofetch": true,
     "explorer.confirmDelete": false,
     "rust-analyzer.inlayHints.typeHints": true,
-    "workbench.colorTheme": "GitHub Dark",
+    "workbench.colorTheme": "GitHub Light",
     "editor.renderControlCharacters": true,
     "window.menuBarVisibility": "hidden",
     "breadcrumbs.enabled": false,
@@ -149,15 +150,17 @@
     "go.toolsManagement.autoUpdate": true,
     "workbench.preferredLightColorTheme": "GitHub Light",
     "workbench.preferredDarkColorTheme": "GitHub Dark",
-    "sundial.sunrise": "06:00",
-    "sundial.sunset": "17:00",
-    "workbench.editorAssociations": [
-        {
-            "viewType": "jupyter.notebook.ipynb",
-            "filenamePattern": "*.ipynb"
-        }
-    ],
+    "sundial.sunrise": "04:00",
+    "sundial.sunset": "16:00",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
     "editor.formatOnSave": true,
     "terminal.integrated.cursorStyle": "line",
     "window.zoomLevel": 1,
+    "vs-kubernetes": {
+        "vscode-kubernetes.helm-path.linux": "/home/xi/.vs-kubernetes/tools/helm/linux-amd64/helm",
+        "vscode-kubernetes.kubectl-path.linux": "/home/xi/.vs-kubernetes/tools/kubectl/kubectl",
+        "vscode-kubernetes.minikube-path.linux": "/home/xi/.vs-kubernetes/tools/minikube/linux-amd64/minikube"
+    },
 }
