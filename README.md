@@ -1,4 +1,4 @@
-# The gentoo xiashura dotfiles
+# The nxios xiashura dotfiles
 ## screenshot
 
 ![](./1.png)
