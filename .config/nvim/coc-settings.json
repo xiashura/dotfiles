@@ -1,9 +1,0 @@
-{
-	"diagnostic.messageTarget":"echo",
-	"diagnostic.virtualText":true,
-  "diagnostic.displayByAle": true,
-	"suggest.floatEnable": true,
-	"go.goplsOptions":{
-		"completeUnimported":true
-	}
-}
