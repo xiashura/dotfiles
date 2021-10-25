@@ -27,6 +27,7 @@
 		let neovim = import ./neovim.nix;
 		in neovim.config ;
 		plugins = with pkgs.vimPlugins; [
+			vim-multiple-cursors
 			nerdtree
 			vim-devicons
 			coc-nvim
@@ -38,4 +39,11 @@
 			fzf-vim
 		];
   };
+
+	programs.bash.shellAliases = {
+ 		vim = "nvim";
+		v = "nvim";
+		vi = "nvim";
+	};
+
 }
