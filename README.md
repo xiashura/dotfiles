@@ -1,6 +1,6 @@
-# The gentoo xiashura dotfiles
+# The nixos xiashura dotfiles
 ## screenshot
 
-![](./1.png)
+![](https://github.com/xiashura/dotfiles/blob/nixos/1.png)
 
 
