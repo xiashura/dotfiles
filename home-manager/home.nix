@@ -26,10 +26,14 @@
     celluloid
     gimp
     pavucontrol
-    go
+    go_1_17
     delve
     zsh
+    gcc
+    docker-compose
+tor-browser-bundle-bin 
   ];
+
 
   programs.zsh = {
     enable = true;
@@ -40,7 +44,7 @@
 
     history = {
       size = 10000;
-      path = "/home/xi/.cache/history";
+      path = ".cache/history";
     };
 
     oh-my-zsh = {
