@@ -8,10 +8,17 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usb_storage" "usbhid" "sd_mod" "thinkpad_acpi" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usb_storage" "usbhid" "sd_mod" "thinkpad_acpi" "intel_lpss_pci" ];
   boot.initrd.kernelModules = [ "dm-snapshot" ];
   boot.kernelModules = [ "kvm-intel" "acpi_call" ];
   boot.extraModulePackages = [ ];
+  boot.extraModprobeConfig = ''
+    options snd-intel-dspcfg dsp_driver=1
+  '';
+
+boot.kernel.sysctl = {
+    "dev.i915.perf_stream_paranoid" = 0;
+  };
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/7dab62e0-08d8-41fc-a0fd-f61b24a3af9d";

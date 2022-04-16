@@ -1,5 +1,11 @@
 { config, lib, pkgs, ... }: 
-{
+
+ {
+
+   #imports =
+   # [ # Include the results of the hardware scan.
+   #   ./doom.nix
+   # ];
 
   home.packages = with pkgs; [
     tdesktop
@@ -10,6 +16,7 @@
     htop
     git
     discord
+    #discord-canary
     pass
     ranger
     gnupg
@@ -31,7 +38,19 @@
     zsh
     gcc
     docker-compose
-tor-browser-bundle-bin 
+    tor-browser-bundle-bin 
+    libreoffice
+    skypeforlinux
+    lens
+    element-desktop
+    xonotic
+#transmission-gtk
+gnome.gnome-boxes
+binance
+#emacs-all-the-icons-fonts
+ansible
+ripgrep
+mongodb-compass
   ];
 
 
@@ -66,6 +85,9 @@ tor-browser-bundle-bin
     GOBIN = "/home/xi/Projects/go/bin";
     GOPATH = "/home/xi/Projects/go";
   };
-  
+ 
+
+ 
 }
+
 
