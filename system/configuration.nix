@@ -2,9 +2,24 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
+let
+nixpkgs = import <nixpkgs> { overlays = [ 
+(self: super: {
+  # elements of pkgs.gnome must be taken from gself and gsuper
+  gnome = super.gnome.overrideScope' (gself: gsuper: {
+    mutter = gsuper.mutter.override {
+	 version = "42.0";
+    };
+  });
+})
 
+ ]; };
+in 
 {
+
+
+
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
@@ -16,7 +31,7 @@
   hardware.enableAllFirmware = true;
   nixpkgs.config.allowUnfree = true;
 
-  boot.loader.systemd-boot.enable = true;
+#  boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.grub = {
     enable = true;
@@ -50,9 +65,9 @@ boot.initrd.luks.devices = {
 
   networking.hostName = "thinkpad-nano"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
+networking.networkmanager.enable = true;
   # Set your time zone.
-   time.timeZone = "Asia/Yekaterinburg";
+   time.timeZone = "Europe/Moscow";
 
   # The global useDHCP flag is deprecated, therefore explicitly set to false here.
   # Per-interface useDHCP will be mandatory in the future, so this generated config
@@ -71,11 +86,11 @@ boot.initrd.luks.devices = {
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Select internationalisation properties.
-  # i18n.defaultLocale = "en_US.UTF-8";
-  # console = {
-  #   font = "Lat2-Terminus16";
-  #   keyMap = "us";
-  # };
+   i18n.defaultLocale = "en_US.UTF-8";
+   console = {
+     font = "Lat2-Terminus16";
+     keyMap = "us";
+   };
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -107,7 +122,14 @@ boot.initrd.luks.devices = {
      isNormalUser = true;
      shell = pkgs.zsh;
      useDefaultShell = false;
-     extraGroups = [ "wheel" "docker" "audio" "libvirtd" ]; # Enable ‘sudo’ for the user.
+     extraGroups = [ "wheel" "docker" "video" "audio" "libvirtd" ]; # Enable ‘sudo’ for the user.
+   };
+
+   nix = {
+    package = pkgs.nixFlakes; # or versioned attributes like nixVersions.nix_2_8
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
    };
 
   # List packages installed in system profile. To search, run:
@@ -116,7 +138,7 @@ boot.initrd.luks.devices = {
      vim  
      wget
      docker
-     kvm
+     qemu_kvm
      firefox
      thinkfan
      fwupd
@@ -130,21 +152,20 @@ boot.initrd.luks.devices = {
      pipewire
      helvum
      throttled
- vulkan-tools
-     lutris
+# vulkan-tools
+#     lutris
 thermald
 transmission-gtk
 gnome.zenity
-    wine
-cabextract
-
+#    wine
+#cabextract
+#linuxKernel.packages.linux_zen.xmm7360-pci
    ];
-  hardware.opengl.enable = true;
-  hardware.pulseaudio.support32Bit = true;
-hardware.opengl.driSupport32Bit = true;
+#  hardware.opengl.enable = true;
+#  hardware.pulseaudio.support32Bit = true;
+#hardware.opengl.driSupport32Bit = true;
 
       services.flatpak.enable = true;
-
 
 #networking.firewall.extraCommands = ''
 #  iptables -A nixos-fw -p udp --source 192.168.0.0/24 --dport 20594:20596 -j nixos-fw-accept
@@ -247,8 +268,6 @@ ANALOGIO: 0
 };
 
 
-
-
 hardware.pulseaudio.enable = false;
 security.rtkit.enable = true;
 services.pipewire = {
@@ -274,6 +293,7 @@ programs.gnupg.agent = {
 
 
 virtualisation.libvirtd.enable = true;
+services.qemuGuest.enable=true;
 virtualisation.docker.enable = true;
 
 
@@ -300,7 +320,9 @@ services.tlp = {
       enable = true;
       settings = {
 	CPU_SCALING_GOVERNOR_ON_AC= "performance";
+	#CPU_SCALING_GOVERNOR_ON_AC= "powersave";
 	CPU_SCALING_GOVERNOR_ON_BAT= "powersave";
+	#CPU_ENERGY_PERF_POLICY_ON_AC= "powersave";
 	CPU_ENERGY_PERF_POLICY_ON_AC= "performance";
 
 	WIFI_PWR_ON_AC = false;
@@ -355,7 +377,6 @@ fonts.fonts = with pkgs; [
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "21.11"; # Did you read the comment?
+  system.stateVersion = "unstable"; # Did you read the comment?
 
 }
-

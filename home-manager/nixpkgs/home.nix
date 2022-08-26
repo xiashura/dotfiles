@@ -2,11 +2,6 @@
 
  {
 
-   #imports =
-   # [ # Include the results of the hardware scan.
-   #   ./doom.nix
-   # ];
-
   home.packages = with pkgs; [
     tdesktop
     neofetch
@@ -15,7 +10,7 @@
     unzip
     htop
     git
-    discord
+    #discord
     #discord-canary
     pass
     ranger
@@ -33,7 +28,7 @@
     celluloid
     gimp
     pavucontrol
-    go_1_17
+    go_1_18
     delve
     zsh
     gcc
@@ -47,12 +42,10 @@
 #transmission-gtk
 gnome.gnome-boxes
 binance
-#emacs-all-the-icons-fonts
-ansible
-ripgrep
+yamllint
 mongodb-compass
+virt-manager
   ];
-
 
   programs.zsh = {
     enable = true;
@@ -89,5 +82,3 @@ mongodb-compass
 
  
 }
-
-
