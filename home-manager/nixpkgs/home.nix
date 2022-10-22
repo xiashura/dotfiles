@@ -21,7 +21,7 @@
     spotify
     zoom-us
     flameshot
-    vlc 
+    #vlc 
     transmission
     postman
     dbeaver
@@ -45,6 +45,9 @@ binance
 yamllint
 mongodb-compass
 virt-manager
+transmission-remote-gtk
+mpv
+google-chrome
   ];
 
   programs.zsh = {
@@ -52,6 +55,9 @@ virt-manager
     shellAliases = {
       ll = "ls -l";
       update = "sudo nixos-rebuild switch";
+    
+
+
     };
 
     history = {
@@ -82,3 +88,5 @@ virt-manager
 
  
 }
+
+

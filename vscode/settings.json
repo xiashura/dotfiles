@@ -1,0 +1,181 @@
+{
+    "material-icon-theme.files.associations": {
+        "hosts": "settings",
+    },
+    "material-icon-theme.folders.associations": {
+        "charts": "Kubernetes",
+        "cloud-init": "Aws"
+    },
+    "editor.tabSize": 2,
+    "go.useLanguageServer": true,
+    "go.autocompleteUnimportedPackages": true,
+    "go.toolsEnvVars": {
+        "GOBIN": "/home/xi/Projects/go/bin"
+    },
+    "gopls": {
+        "completeUnimported": true
+    },
+    "go.lintTool": "golangci-lint",
+    "go.lintFlags": [
+        "--fast"
+    ],
+    "search.quickOpen.includeHistory": false,
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "variable.other.rust",
+                "settings": {
+                    "foreground": "#c651e5"
+                }
+            }
+        ]
+    },
+    "[rust]": {
+        "editor.defaultFormatter": "rust-lang.rust-analyzer"
+    },
+    "editor.snippetSuggestions": "top",
+    "cSpell.language": "en,ru",
+    "editor.lineNumbers": "relative",
+    "workbench.editor.untitled.experimentalLanguageDetection": true,
+    "editor.fontFamily": "FiraCode Nerd Font Mono",
+    "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 16,
+    "vim.easymotion": true,
+    "vim.foldfix": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.leader": "<space>",
+    "vim.handleKeys": {
+        "<C-a>": false,
+        "<C-f>": false,
+        "<C-j>": false,
+        "<C-h>": false,
+        "<C-b>": false,
+        "<C-m>": false,
+        "<C-w>": false,
+        "<C-o>": false,
+        "<C-t>": false
+    },
+    "vim.statusBarColorControl": true,
+    "vim.statusBarColors.normal": [
+        "#8FBCBB",
+        "#434C5E"
+    ],
+    "vim.statusBarColors.insert": "#BF616A",
+    "vim.statusBarColors.visual": "#B48EAD",
+    "vim.statusBarColors.visualline": "#B48EAD",
+    "vim.statusBarColors.visualblock": "#A3BE8C",
+    "vim.statusBarColors.replace": "#D08770",
+    "vim.statusBarColors.commandlineinprogress": "#007ACC",
+    "vim.statusBarColors.searchinprogressmode": "#007ACC",
+    "vim.statusBarColors.easymotionmode": "#007ACC",
+    "vim.statusBarColors.easymotioninputmode": "#007ACC",
+    "vim.statusBarColors.surroundinputmode": "#007ACC",
+    "vim.normalModeKeyBindings": [
+        {
+            "before": [
+                "q",
+                "q"
+            ],
+            "commands": [
+                ":q!"
+            ]
+        },
+        {
+            "before": [
+                "t",
+                "k"
+            ],
+            "commands": [
+                "workbench.action.nextEditor"
+            ]
+        },
+        {
+            "before": [
+                "t",
+                "j"
+            ],
+            "commands": [
+                "workbench.action.previousEditor"
+            ]
+        },
+        {
+            "before": [
+                "t",
+                "n"
+            ],
+            "commands": [
+                ":enew"
+            ]
+        }
+    ],
+    "vim.visualModeKeyBindings": [
+        {
+            "before": [
+                ">"
+            ],
+            "commands": [
+                "editor.action.indentLines"
+            ]
+        },
+        {
+            "before": [
+                "<"
+            ],
+            "commands": [
+                "editor.action.outdentLines"
+            ]
+        }
+    ],
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#BF616A",
+        "statusBar.noFolderBackground": "#BF616A",
+        "statusBar.debuggingBackground": "#BF616A",
+        "statusBar.debuggingForeground": "#434C5E",
+        "statusBar.foreground": "#434C5E"
+    },
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.startupEditor": "newUntitledFile",
+    "editor.multiCursorModifier": "ctrlCmd",
+    "git.autofetch": true,
+    "explorer.confirmDelete": false,
+    "editor.renderControlCharacters": true,
+    "window.menuBarVisibility": "hidden",
+    "breadcrumbs.enabled": false,
+    "editor.minimap.enabled": false,
+    "emmet.includeLanguages": {
+        "html-eex": "html"
+    },
+    "cSpell.userWords": [
+        "kubernetes",
+        "preprod",
+        "xiashura"
+    ],
+    "go.toolsManagement.autoUpdate": true,
+    "workbench.preferredLightColorTheme": "Adwaita Light & default syntax highlighting & colorful status bar",
+    "workbench.preferredDarkColorTheme": "Adwaita Dark & default syntax highlighting & colorful status bar",
+    "sundial.sunrise": "08:00",
+    "sundial.sunset": "16:00",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
+    "editor.formatOnSave": true,
+    "terminal.integrated.cursorStyle": "line",
+    "glassit.alpha": 247,
+    "workbench.colorTheme": "Adwaita Light & default syntax highlighting & colorful status bar",
+    "redhat.telemetry.enabled": false,
+    "editor.cursorBlinking": "smooth",
+    "rust-analyzer.inlayHints.typeHints.enable": true,
+    "workbench.editor.untitled.hint": "hidden",
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "vs-kubernetes": {
+        "vs-kubernetes.knownKubeconfigs": [
+            "/home/xi2/Projects/devops/example-terraform-k8s-kvm/admin.conf"
+        ],
+        "vs-kubernetes.kubeconfig": "/home/xi2/Projects/devops/example-terraform-k8s-kvm/admin.conf"
+    }
+}

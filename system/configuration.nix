@@ -3,19 +3,19 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, lib, ... }:
-let
-nixpkgs = import <nixpkgs> { overlays = [ 
-(self: super: {
-  # elements of pkgs.gnome must be taken from gself and gsuper
-  gnome = super.gnome.overrideScope' (gself: gsuper: {
-    mutter = gsuper.mutter.override {
-	 version = "42.0";
-    };
-  });
-})
+#let
+#nixpkgs = import <nixpkgs> { overlays = [ 
+#(self: super: {
+#  # elements of pkgs.gnome must be taken from gself and gsuper
+#  gnome = super.gnome.overrideScope' (gself: gsuper: {
+#    mutter = gsuper.mutter.override {
+#	 version = "43.0";
+#    };
+#  });
+#})
 
- ]; };
-in 
+# ]; };
+#in 
 {
 
 
@@ -48,6 +48,13 @@ boot.initrd.luks.devices = {
       };
   };
 
+ fileSystems."/mnt/torrent" = {
+    device = "10.8.0.1:/var/video/torrent";
+    fsType = "nfs";
+    options = [ "x-systemd.automount" "noauto" "x-systemd.idle-timeout=300" ];
+  };
+
+
   powerManagement.powerUpCommands = with pkgs;''
     ${bash}/bin/bash -c "echo 'RP01      S4    *disabled   pci:0000:00:1c.0' >> /proc/acpi/wakeup"
   '';
@@ -68,7 +75,7 @@ boot.initrd.luks.devices = {
 networking.networkmanager.enable = true;
   # Set your time zone.
    time.timeZone = "Europe/Moscow";
-
+fonts.fontDir.enable = true;
   # The global useDHCP flag is deprecated, therefore explicitly set to false here.
   # Per-interface useDHCP will be mandatory in the future, so this generated config
   # replicates the default behaviour.
@@ -125,12 +132,14 @@ networking.networkmanager.enable = true;
      extraGroups = [ "wheel" "docker" "video" "audio" "libvirtd" ]; # Enable ‘sudo’ for the user.
    };
 
-   nix = {
-    package = pkgs.nixFlakes; # or versioned attributes like nixVersions.nix_2_8
-    extraOptions = ''
-      experimental-features = nix-command flakes
-    '';
-   };
+
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+   #nix = {
+   # package = nixVersions.stable; # or versioned attributes like nixVersions.nix_2_8
+   # extraOptions = ''
+   #   experimental-features = nix-command flakes
+   # '';
+   #};
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -152,14 +161,14 @@ networking.networkmanager.enable = true;
      pipewire
      helvum
      throttled
-# vulkan-tools
-#     lutris
+#vulkan-tools
+#lutris
 thermald
 transmission-gtk
-gnome.zenity
+#gnome.zenity
 #    wine
 #cabextract
-#linuxKernel.packages.linux_zen.xmm7360-pci
+kde-rounded-corners
    ];
 #  hardware.opengl.enable = true;
 #  hardware.pulseaudio.support32Bit = true;
@@ -380,3 +389,4 @@ fonts.fonts = with pkgs; [
   system.stateVersion = "unstable"; # Did you read the comment?
 
 }
+
