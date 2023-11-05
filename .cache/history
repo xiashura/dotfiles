@@ -1,0 +1,19 @@
+: 1699155526:0;cd .. 
+: 1699155530:0;rm -rf dotfiles
+: 1699155540:7;git clone git@github.com:xiashura/dotfiles.git
+: 1699155550:0;cd dotfiles
+: 1699155551:0;ls
+: 1699155554:0;code .
+: 1699155678:0;code . 
+: 1699155723:0;mv ~/.config/nixpkgs/home.nix ./home-manager/nixpkgs/home.nix
+: 1699155812:0;sudo mv /etc/nixos/configuration.nix  ./system/configuration.nix
+: 1699155825:0;sudo mv /etc/nixos/hardware-configuration.nix  ./system/hardware-configuration.nix
+: 1699155834:0;ranger
+: 1699155975:0;cp /home/xi/.config/Code/User/keybindings.json  vscode/keybindings.json
+: 1699155989:0;cp /home/xi/.config/Code/User/settings.json   vscode/settings.json
+: 1699156009:0;sudo cp ./system/configuration.nix /etc/nixos/
+: 1699156018:0;sudo cp ./system/hardware-configuration.nix /etc/nixos/
+: 1699156041:0;cp ./home-manager/nixpkgs/home.nix ~/.config/nixpkgs/
+: 1699156140:0;suod chown -R xi:users system
+: 1699156145:0;sudo chown -R xi:users system
+: 1699156181:0;git add .

@@ -1,4 +1,18 @@
 {
+    "[yaml]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml",
+        // "editor.snippetSuggestions": "top",
+        "editor.quickSuggestions": {
+            "other": "on",
+            "comments": "on",
+            "strings": "on"
+        }
+    },
+    "yaml.schemas": {
+        "url": "globPattern",
+        "Kubernetes": "globPattern"
+    },
+    "yaml.format.enable": false,
     "material-icon-theme.files.associations": {
         "hosts": "settings",
     },
@@ -6,6 +20,7 @@
         "charts": "Kubernetes",
         "cloud-init": "Aws"
     },
+    "editor.snippetSuggestions": "none",
     "editor.tabSize": 2,
     "go.useLanguageServer": true,
     "go.autocompleteUnimportedPackages": true,
@@ -33,7 +48,7 @@
     "[rust]": {
         "editor.defaultFormatter": "rust-lang.rust-analyzer"
     },
-    "editor.snippetSuggestions": "top",
+    // "editor.snippetSuggestions": "top",
     "cSpell.language": "en,ru",
     "editor.lineNumbers": "relative",
     "workbench.editor.untitled.experimentalLanguageDetection": true,
@@ -74,6 +89,17 @@
     "vim.statusBarColors.easymotionmode": "#007ACC",
     "vim.statusBarColors.easymotioninputmode": "#007ACC",
     "vim.statusBarColors.surroundinputmode": "#007ACC",
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "g",
+                "s"
+            ],
+            "commands": [
+                "editor.action.moveSelectionToNextFindMatch"
+            ]
+        }
+    ],
     "vim.normalModeKeyBindings": [
         {
             "before": [
@@ -131,11 +157,11 @@
         }
     ],
     "workbench.colorCustomizations": {
-        "statusBar.background": "#BF616A",
-        "statusBar.noFolderBackground": "#BF616A",
-        "statusBar.debuggingBackground": "#BF616A",
-        "statusBar.debuggingForeground": "#434C5E",
-        "statusBar.foreground": "#434C5E"
+        "statusBar.background": "#8FBCBB",
+        "statusBar.noFolderBackground": "#8FBCBB",
+        "statusBar.debuggingBackground": "#8FBCBB",
+        "statusBar.foreground": "#434C5E",
+        "statusBar.debuggingForeground": "#434C5E"
     },
     "workbench.iconTheme": "material-icon-theme",
     "workbench.startupEditor": "newUntitledFile",
@@ -152,20 +178,25 @@
     "cSpell.userWords": [
         "kubernetes",
         "preprod",
-        "xiashura"
+        "xiashura",
+        "Xonotic"
     ],
     "go.toolsManagement.autoUpdate": true,
-    "workbench.preferredLightColorTheme": "Adwaita Light & default syntax highlighting & colorful status bar",
-    "workbench.preferredDarkColorTheme": "Adwaita Dark & default syntax highlighting & colorful status bar",
-    "sundial.sunrise": "08:00",
-    "sundial.sunset": "16:00",
+    "workbench.preferredLightColorTheme": "Adwaita Light & colorful status bar",
+    "workbench.preferredDarkColorTheme": "Adwaita Dark & colorful status bar",
+    "window.autoDetectColorScheme": true,
+    // "autoDayNightThemeSwitcher.autoToggle": true,
+    // "autoDayNightThemeSwitcher.dayTheme": "Adwaita Light & colorful status bar",
+    // "autoDayNightThemeSwitcher.nightTheme": "Adwaita Dark & colorful status bar",
+    // "sundial.sunrise": "08:00",
+    // "sundial.sunset": "16:00",
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter.notebook.ipynb"
     },
     "editor.formatOnSave": true,
     "terminal.integrated.cursorStyle": "line",
-    "glassit.alpha": 247,
-    "workbench.colorTheme": "Adwaita Light & default syntax highlighting & colorful status bar",
+    "glassit.alpha": 250,
+    "workbench.colorTheme": "Adwaita Dark & colorful status bar",
     "redhat.telemetry.enabled": false,
     "editor.cursorBlinking": "smooth",
     "rust-analyzer.inlayHints.typeHints.enable": true,
@@ -174,8 +205,24 @@
     "terminal.integrated.enableMultiLinePasteWarning": false,
     "vs-kubernetes": {
         "vs-kubernetes.knownKubeconfigs": [
-            "/home/xi2/Projects/devops/example-terraform-k8s-kvm/admin.conf"
+            "/home/xi2/Projects/devops/example-terraform-k8s-kvm/admin.conf",
+            "/home/xi/Projects/devops/k8s-metallb-ingress/config.yml"
         ],
-        "vs-kubernetes.kubeconfig": "/home/xi2/Projects/devops/example-terraform-k8s-kvm/admin.conf"
-    }
+        "vs-kubernetes.kubeconfig": "/home/xi/Projects/devops/k8s-metallb-ingress/config.yml"
+    },
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "ansibleServer.trace.server": "messages",
+    "ansible.executionEnvironment.containerEngine": "docker",
+    "nixfmt.path": "/home/xi/.nix-profile/bin/nixfmt",
+    "ansible.validation.enabled": false,
+    "yaml.format.bracketSpacing": false,
+    "yaml.extension.recommendations": false,
+    "yaml.hover": false,
+    "yaml.style.flowMapping": "forbid",
+    "yaml.style.flowSequence": "forbid",
+    "yaml.format.proseWrap": "never",
+    "ansible.python.interpreterPath": "/home/xi/.nix-profile/bin/python",
+    "diffEditor.ignoreTrimWhitespace": false
 }
