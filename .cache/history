@@ -17,3 +17,7 @@
 : 1699156140:0;suod chown -R xi:users system
 : 1699156145:0;sudo chown -R xi:users system
 : 1699156181:0;git add .
+: 1699156186:0;git commit -m "update"
+: 1699156206:0;git push origin nixos-thinkpad-nano
+: 1699156778:0;cf 
+: 1699156779:0;cd 
