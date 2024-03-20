@@ -1,93 +1,55 @@
 { config, lib, pkgs, ... }:
 let vimConfig = builtins.readFile "/home/xi/.config/home-manager/neovim.vim";
 in {
-  # Home Manager needs a bit of information about you and the paths it should
-  # manage.
   home.username = "xi";
   home.homeDirectory = "/home/xi";
 
-  # This value determines the Home Manager release that your configuration is
-  # compatible with. This helps avoid breakage when a new Home Manager release
-  # introduces backwards incompatible changes.
-  #
-  # You should not change this value, even if you update Home Manager. If you do
-  # want to update the value, then make sure to first check the Home Manager
-  # release notes.
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
-  # The home.packages option allows you to install Nix packages into your
-  # environment.
   home.packages = with pkgs; [
-    firefox
-    tdesktop
     neofetch
-    vscode
     tmux
     unzip
     htop
     git
-    pass
     ranger
-    gnupg
-    wl-clipboard
     sshfs
-    pam_gnupg
-    spotify
-    zoom-us
-    flameshot
-    transmission
-    #postman
-    dbeaver
-    celluloid
-    gimp
-    pavucontrol
     delve
-    zsh
     gcc
     docker-compose
-    tor-browser-bundle-bin
-    skypeforlinux
-    lens
-    element-desktop
-    xonotic
-    mongodb-compass
-    virt-manager
-    transmission-remote-gtk
-    mpv
-    python39Packages.docker
-    ansible
+    python39Packages.docker ansible
     terraform_1
     terraform-ls
-    logseq
+		terraform-lsp
+		tflint
     kubectl
     nixfmt
     kind
-    go_1_20
+    go_1_21
 		gopls
     kubernetes-helm-wrapped
     jq
     nodePackages.yaml-language-server
     ansible-lint
     python39
-    gnome.nautilus
-    gnome-photos
-    gnome.gnome-calendar
-    shotwell
-    evince
-    resp-app
-    gnome.gnome-terminal
     k9s
     operator-sdk
     gnumake
     fzf
 		ripgrep
+		openssl
+		lsd
   ];
 
   programs.zsh = {
     enable = true;
     shellAliases = {
+			ls = "lsd";
       ll = "ls -l";
       update = "sudo nixos-rebuild switch";
+			vim = "nvim";
+			v = "nvim";
+			neofetch = "neofetch --kitty ~/Pictures/avatar/Asahi_Linya.png --size 550px";
     };
 
     history = {
@@ -126,6 +88,9 @@ in {
 			nvim-dap-virtual-text
 			nvim-dap-ui
 			nvim-dap-go
+			molokai
+			comment-nvim
+			vim-colorschemes
     ];
   };
 
